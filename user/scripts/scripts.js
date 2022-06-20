@@ -18,14 +18,6 @@ $(document).ready(function(){
         };
 
         $.ajax(settings).done(function(response){
-            var custom_fields = response.CustomFields;
-            var user_role;
-            for(var i=0;i<custom_fields.length;i++){
-                if(custom_fields[i].Code == "kinorauserrole-L7ISxLez3b"){
-                    user_role = custom_fields[i].Values[0];
-                }
-            }
-
             window.Appcues.identify(
                 response.UserLogins[0].ProviderKey,
                 {
